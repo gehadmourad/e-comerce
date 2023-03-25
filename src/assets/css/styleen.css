@@ -1,0 +1,17 @@
+.logo-header{
+    float: left;
+}
+.navbar.navbar-header{
+    direction: rtl;
+}
+.sidebar.sidebar-style-2{
+    left: 0;
+}
+.main-panel{
+    float: right;
+}
+.navbar-nav.topbar-nav.ml-md-autoa.lign-items-center{
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    direction: ltr;
+}

@@ -1,0 +1,124 @@
+<app-bar [ngClass]="{'arSidebar': lang === 'ar', 'enSlidebar' : lang === 'en' }"
+    ></app-bar>
+<section class="main " id="topHeader">
+    <div class="container">
+        <div class="sub-header">
+            <div class="col">
+                <div class="row d-flex">
+                    <h4 class="pageTitle" id="pageTitle">
+                        {{'Product.addProduct'|translate}}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bg-white container">
+    <form [formGroup]="ProductForm" #f="ngForm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{'Product.title'|translate}}</label>
+                        <div class="">
+                            <input formControlName="title" type="text" class="form-control">
+                        </div>
+                        <div *ngIf="!ProductForm.controls['title'].valid && (ProductForm.controls['title'].dirty ||
+            ProductForm.controls['title'].touched  || f.submitted)" class="error-message">
+                            <span class="error-message" *ngIf="ProductForm.controls['title'].errors?.['required']">
+                                {{'Shared.Required'|translate}}
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{'Product.price'|translate}}</label>
+                        <div class="">
+                            <input formControlName="price" type="text" class="form-control">
+                        </div>
+                        <div *ngIf="!ProductForm.controls['price'].valid && (ProductForm.controls['price'].dirty ||
+            ProductForm.controls['price'].touched  || f.submitted)" class="error-message">
+                            <span class="error-message" *ngIf="ProductForm.controls['price'].errors?.['required']">
+                                {{'Shared.Required'|translate}}
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{'Product.category'|translate}}</label>
+                        <div class="">
+                            <input formControlName="category" type="text" class="form-control">
+                        </div>
+                        <div *ngIf="!ProductForm.controls['category'].valid && (ProductForm.controls['category'].dirty ||
+            ProductForm.controls['category'].touched  || f.submitted)" class="error-message">
+                            <span class="error-message" *ngIf="ProductForm.controls['category'].errors?.['required']">
+                                {{'Shared.Required'|translate}}
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{'Product.description'|translate}}</label>
+                        <div class="">
+                            <input formControlName="description" type="text" class="form-control">
+                        </div>
+                        <div *ngIf="!ProductForm.controls['description'].valid && (ProductForm.controls['description'].dirty ||
+            ProductForm.controls['description'].touched  || f.submitted)" class="error-message">
+                            <span class="error-message" *ngIf="ProductForm.controls['description'].errors?.['required']">
+                                {{'Shared.Required'|translate}}
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{'Product.image'|translate}}</label>
+                    <div class="">
+                        <input data-required="image"  formControlName="image"
+                        type="file" multiple name="image_name" id="file_upload" class="image-input"
+                        data-traget-resolution="image_resolution" (change)="uploadFileimage($event)" accept="image/*">
+                      
+                        <div class="text-danger invalid">
+                            <span *ngIf="isthumbnail==true" class="error-message">
+                                {{'Shared.required'|translate}}
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success " (click)="save()" >
+                            {{'Shared.save'|translate}}</button>
+    
+                    </div>
+    
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-default" (click)="cancel()">
+                            {{'Shared.cancel'|translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+    </form>
+</div>

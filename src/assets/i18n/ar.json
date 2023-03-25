@@ -1,0 +1,33 @@
+{
+  "Shared":{
+    "save":"حفظ",
+    "cancel":"الغاء",
+    "Required":"يجب ادخاله" ,
+    "Active":"مسح",
+    "edit":"تعديل",
+    "search":"بحث",
+    "confirm":"تأكيد",
+    "yes":"موافق",
+    "no":"لا",
+    "confirmUnActive":"هل انت متأكد من المسح",
+    "logout":"خروج"
+    
+  },
+  "Product":{
+    "title":"العنوان",
+    "addProduct":"اضافه منتج",
+    "price":"السعر",
+    "category":"التصنيف",
+    "description":"الوصف",
+    "editProduct":"تعديل المنتج",
+    "image":"الصوره",
+    "products":"المنتجات"
+  },
+  "login":{
+    "login":"الدخول",
+    "errorUserOrPass":"الاسم او الرقم السرى غير صحيح",
+    "signIn":"تسجيل الدخول" ,
+    "Username":"الاسم",
+    "Password":"الرقم السرى"
+  }
+}

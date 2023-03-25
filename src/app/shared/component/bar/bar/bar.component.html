@@ -1,0 +1,20 @@
+<nav _ngcontent-owm-c18="" data-background-color="blue2" class="navbar navbar-header navbar-expand-lg ennavbar-header">
+<div class="container-fluid">
+    <ul class="m-3">
+        <li style="cursor: pointer !important;" class="float-right">
+            <div *ngIf="lang=='ar'" class="lang " style="cursor: pointer !important;" (click)="changeLanguage('en')">
+              <a style="cursor: pointer !important;" (click)="changeLanguage('en')">EN</a>
+            </div>
+  
+            <div *ngIf="lang=='en'" class="lang" style="cursor: pointer !important;" (click)="changeLanguage('ar')">
+              <a style="cursor: pointer !important;" (click)="changeLanguage('ar')">AR</a>
+            </div>
+  
+          </li>
+          <li style="cursor: pointer !important;" class="float-left">
+          <div class="dropdown-item  " >
+            <a class="dropdown-item" (click)="logout()">{{'Shared.logout'|translate}}</a></div>
+          </li>
+    </ul>
+</div>
+</nav>

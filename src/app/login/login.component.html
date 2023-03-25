@@ -1,0 +1,86 @@
+<div class="content" style="background: #fff;">
+    <div class="row">
+      <div class="col-12" style="text-align: end;">
+        <div class="chLang-blue">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-1">
+                <h5 *ngIf="languageService.getDefaultLang()==='en'" (click)="changeLanguage('ar')">
+                  <i class="fa fa-globe">
+                    العربية
+                  </i>
+                </h5>
+                <h5 *ngIf="languageService.getDefaultLang()==='ar'" (click)="changeLanguage('en')">
+                  <i class="fa fa-globe">
+                    English
+                  </i>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="../../assets/img/login_image.png" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+                <h3>{{'login.signIn'|translate}}</h3>
+              </div>
+              <div class="bg-white">
+                <form [formGroup]="loginForm" (ngSubmit)="save()" #f="ngForm">
+                  <div class="form-group first">
+                    <!-- <label for="Username">{{'login.Username'|translate}}</label> -->
+                    <input type="text" class="form-control" id="Username" formControlName="Username"
+                      placeholder="{{'login.Username'|translate}}">
+  
+                  </div>
+  
+                  <div
+                    *ngIf="!loginForm.controls['Username'].valid && (loginForm.controls['Username'].dirty || loginForm.controls['Username'].touched  || f.submitted)"
+                    class="error-message row ">
+                    <span>
+                      {{'Shared.Required'|translate}}
+                    </span>
+                  </div>
+  
+                  <div class="form-group last mb-4">
+                    <input type="Password" class="form-control" id="Password" formControlName="Password"
+                      placeholder="{{'login.Password'|translate}}">
+  
+                  </div>
+                  <div
+                    *ngIf="!loginForm.controls['Password'].valid && (loginForm.controls['Password'].dirty || loginForm.controls['Password'].touched  || f.submitted)"
+                    class="error-message row"><span>
+                      {{'Shared.Required'|translate}}
+                    </span></div>
+                 
+  
+                 
+  
+                  <input type="submit" value="{{'login.login'|translate}}" class="btn btn-block btn-primary">
+                  <div class="col-md-12">
+                    <label id="lblmsg" *ngIf="invalidPass"
+                      class="text-danger">{{'login.errorUserOrPass'|translate}}</label>
+                  </div>
+                 
+                </form>
+              </div>
+             
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>

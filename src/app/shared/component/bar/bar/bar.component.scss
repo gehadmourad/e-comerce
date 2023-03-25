@@ -1,0 +1,137 @@
+.lang {
+    max-width: 50px;
+    background-color: #31ce36;
+    box-shadow: 2px 2px 10px hsl(0deg 0% 87% / 50%);
+    border-radius: 50%;
+    padding: 10px 12px;
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style: none;
+  }
+  ul{
+    list-style-type: none;
+  }
+  .arSidebar {
+    right: 0px;
+  }
+  
+  .enSlidebar {
+    left: 0px;
+  }
+  
+  .arMain-panel {
+    float: left;
+  }
+  
+  .enMain-panel {
+    float: right;
+  }
+  
+  .arlogo-header {
+    float: right;
+  }
+  
+  .enlogo-header {
+    float: left;
+  }
+  
+  .ennavbar-header {
+    direction: rtl;
+  }
+  
+  .arnavbar-header {
+    direction: ltr;
+  }
+  
+  .arsidebar-style-2 {
+    right: 0px;
+  }
+  
+  .ensidebar-style-2 {
+    left: 0px;
+  }
+  
+  .enlign-items-center {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    direction: ltr;
+  }
+  
+  .arlign-items-center {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    direction: rtl;
+  }
+  
+  .arnav-item {
+    direction: rtl !important;
+  }
+  
+  .ennav-item {
+    direction: ltr !important;
+  
+  }
+  
+  .encard-body {
+    text-align: left;
+  }
+  
+  .arcard-body {
+    text-align: right;
+  }
+  
+  .entextcount {
+    text-align: right;
+  }
+  
+  .artextcount {
+    text-align: left;
+  }
+  
+  .dialogfilter {
+    width: 50vw;
+    background-color: blue;
+    height: 50vw;
+  }
+  
+  .enscrolprofile {
+    right: 0px !important;
+    left: auto !important;
+  }
+  
+  
+  @media screen and (min-width: 991px) {
+    .enscrolprofile:after {
+      border-bottom: 8px solid #fff;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      content: "";
+      left: 237px !important;
+      top: -8px;
+      position: absolute;
+      z-index: 1001;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  #file-input{
+    display: none !important;
+  }
+  .damed{
+    background-color: grey !important;
+  }
+  
+  .fontTableSmallSize th{
+    font-size: 10px !important;
+  }
+  .colorwhite{
+    color: #fff !important;
+  }
+  .textinitial{
+    text-align: initial !important;
+  }

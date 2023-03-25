@@ -1,0 +1,8 @@
+.form-group input[type=file]  ::ng-deep {
+  opacity: initial!important;
+  min-height: 48px;
+}
+/*
+.upload{
+  height: 49px;
+} */

@@ -1,0 +1,22 @@
+
+
+<div class="row upload">
+  <div class="col-md-12">
+
+    <div>
+
+     
+      <app-image *ngIf="isImage()"  [acceptFileValue]="acceptFileValue"
+        [isUploadForm]="isUploadForm" [filePath]="filePath" [allowDelete]="allowDelete" [progress]="progress"
+        (uploadFileEvent)="uploadFile($event)" (deleteFileEvent)="DeleteFile($event)">
+      </app-image>
+
+     
+      <span id="RegularExpressionValidator1" *ngIf="imageIsNotValid" class="validationArea" style="color:Red;">{{
+        'Shared.UploadFile.image' | translate }}</span>
+
+  
+    </div>
+
+  </div>
+</div>

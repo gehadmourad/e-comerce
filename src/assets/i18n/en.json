@@ -1,0 +1,33 @@
+{
+  "Shared":{
+    "save":"save",
+    "cancel":"cancel",
+    "Required":"required",
+    "Active":"delete",
+    "edit":"edit",
+    "search":"search" ,
+    "confirm":"confirm",
+    "yes":"yes",
+    "no":"no",
+    "confirmUnActive":"Are you sure you want to delete ?",
+    "logout":"logout"
+   
+  },
+  "Product":{
+    "title":"title",
+    "addProduct":"addProduct",
+    "price":"price",
+    "category":"category",
+    "description":"description",
+    "editProduct":"editProduct",
+    "image":"image",
+     "products":"products"
+  },
+  "login":{
+    "login":"login",
+    "errorUserOrPass":"invalid password or name",
+    "signIn":"signIn",
+    "Username":"user name",
+    "Password":"password"
+  }
+}

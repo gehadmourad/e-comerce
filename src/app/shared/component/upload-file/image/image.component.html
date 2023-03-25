@@ -1,0 +1,25 @@
+<p-progressBar *ngIf="isProgress" style="width: 100%;" [value]="progress" [showValue]="true" unit="%"
+  mode="determinate"></p-progressBar>
+
+<div class="image-upload" *ngIf="!isProgress && isUploadForm">
+  <label style="cursor: pointer !important;" for="file_upload">
+    <img src="" alt="" class="uploaded-image" style="cursor: pointer !important;">
+    <!-- <div class="h-100">
+        <div class="dplay-tbl">
+          <div class="dplay-tbl-cell"> <i class="fa fa-cloud-upload"></i>
+          </div>
+        </div>
+      </div> -->
+    <!-- <i class="fa fa-upload"></i> -->
+    <i class="fa fa-file-image" style="cursor: pointer !important;"></i>
+    <input data-required="image" type="file" multiple name="image_name" id="file_upload" class="image-input"
+      data-traget-resolution="image_resolution" (change)="uploadFile($event)" accept="image/*">
+  </label>
+</div>
+
+<div style="display: block;" *ngIf="!isProgress && !isUploadForm" class=" input-sm parsley-validated coverImg">
+
+  <img [src]="staticUrl + filePath" class="rounded shadow-lg mb-3" width="100px" height="100px">
+  <button type="button" *ngIf="allowDelete" (click)="DeleteFile($event)" class="btn btn-danger imgDelete">
+    <i class="fa fa-trash"></i></button>
+</div>

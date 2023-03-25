@@ -1,0 +1,64 @@
+.imgDelete {
+  position: absolute;
+  left: 33px!important;
+  top: 68px!important;
+  border-radius: 50%!important;
+  padding: 10px;
+}
+
+.coverImg{
+  position: relative;
+}
+.img{
+  box-shadow: 10px 10px 5px #110e2e;
+}
+
+.item .item-content {
+  padding: 30px 35px
+}
+
+.item-wrapper form img {
+  margin-bottom: 20px;
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  width: auto;
+  border-radius: 5px;
+  overflow: hidden
+}
+
+.image-upload img {
+  height: 100% !important;
+  width: auto !important;
+  border-radius: 0px;
+  margin: 0 auto
+}
+
+.image-upload i {
+  font-size: 1.5em;
+  color: #ccc;
+    background: #fff;
+    padding: 7px;
+    border-radius: 3PX;
+    border: 1px solid #ddd;
+}
+
+.image-upload input {
+  cursor: pointer;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.item-wrapper input {
+  height: 43px;
+  line-height: 43px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px
+}
+

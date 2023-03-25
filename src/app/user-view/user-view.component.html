@@ -1,0 +1,42 @@
+
+<app-bar [ngClass]="{'arSidebar': lang === 'ar', 'enSlidebar' : lang === 'en' }"
+    ></app-bar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-datatable-header ng-star-inserted col">
+            <button *ngFor="let category of categories" #category class="col-md-2 btn btn-info-outline mx-3"
+                (click)="getProductByCategory(category)" style="margin-top: 42px !important;"
+                
+                [ngClass]="category==activeCategory ? 'active' : 'class2' "
+                >
+                {{category}}
+            </button>
+</div>
+        </div>
+        
+        <div  class="row m-4">
+            <div _ngcontent-gsy-c2="" class="col-lg-12">
+            <h1 _ngcontent-gsy-c2="" class="my-4">{{activeCategory}}</h1>
+            
+        </div>
+            <div  class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+                <div  class="card h-100">
+                    <a class="text-center m-2">
+                        <img  alt class="card-img-top text-center" style="width: 200px; height: 200px;" src="{{product.image}}">
+                    </a>
+                    <div  class="card-body">
+                        <h6  class="card-title">
+                            <a  >{{product.title}}</a></h6>
+                    <h3 class="b">${{product.price}}</h3><p  class=" card-text">
+                        {{product.description}}</p>
+                    </div>
+                    <div  class="card-footer">
+<span>{{product.ratenum}}</span>
+                        <!-- <p-rating   [(ngModel)]="product.ratenum" [disabled]="true" [cancel]="false"></p-rating> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,144 @@
+<app-bar [ngClass]="{'arSidebar': lang === 'ar', 'enSlidebar' : lang === 'en' }"
+    ></app-bar>
+<div class="container">
+    <div class="row">
+        <p-confirmDialog header="Confirmation" [closable]=false icon="fa fa-question-circle" width="50%" #cd>
+            <p-footer>
+                <button type="button" class="bg-danger" pButton label="{{ 'Shared.no' | translate }}"
+                    (click)="cd.reject()"></button>
+                <button type="button" class="bg-success" pButton label="{{ 'Shared.yes' | translate }}"
+                    (click)="cd.accept()"></button>
+            </p-footer>
+        </p-confirmDialog>
+      
+        <section class="main " id="topHeader">
+            <div class="container">
+                <div class="sub-header">
+                    <div class="col">
+                        <div class="row d-flex">
+                            <h4 class="pageTitle" id="pageTitle">
+                                {{'Product.products'|translate}}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <p-table #dt [value]="(products)!" [globalFilterFields]="['title']" [rows]="8"
+                [paginator]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        <span class="p-input-icon-left">
+                            <input autocomplete="off" class="searcInput" pInputText type="text"
+                                (input)="dt.filterGlobal(($any($event).target.value), 'contains')"
+                                placeholder="{{'Shared.search' |translate}}..." />
+                        </span>
+
+                        <button appAccessControl moduleType="EducationalPlace_Create" pButton pRipple icon="pi pi-plus"
+                            class="p-button-success p-mr-2   " [routerLink]="'/AddCategory'"
+                            title="{{ 'Shared.add' | translate }}"></button>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="Question">
+
+                            <div >
+                               {{'Product.title'|translate}}
+                            </div>
+                            
+                        </th>
+                        <th>
+                            {{'Product.price'|translate}}
+
+                        </th>
+                        <th>
+                            {{'Product.category'|translate}}
+
+                        </th>
+                        <th>
+                            {{'Product.description'|translate}}
+
+                        </th>
+                        <th>
+                            {{'Product.image'|translate}}
+
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>
+                            <div >{{product.title}}</div>
+                        </td>
+
+                        <td>
+                            {{product.price}}
+                        </td>
+                        <td>
+                            {{product.category}}
+                        </td>
+                        <td>
+                            {{product.description}}
+                        </td>
+                        <td>
+                           <img src="{{product.image}}" class="avatar-img imge-respossive 
+                            sizeimage"/> 
+                        </td>
+                        <td>
+                            <div class="dropdown">
+
+                                <button pButton icon="pi pi-list" class="btn btn-secondary" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                </button>
+                
+                
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+                                    <ul class="p-menu-list p-reset ng-tns-c348-2 mx-4">
+                
+                
+                                        <li class="p-element p-submenu-header ng-tns-c348-2 ng-star-inserted"
+                                        appAccessControl moduleType="product_Delete">
+                                            <div class="row ">
+                            <button  pButton pRipple icon="pi pi-trash"
+                                class="  p-button-danger" (click)="deleteModel(product)"
+                                title="{{ 'product.isDeleted' | translate }}"></button>
+                                <span class="mx-2">
+                                    {{ 'Shared.Active' | translate }}
+                                </span>                
+                            </div>
+                                        </li>
+                                        <li class="p-element p-submenu-header ng-tns-c348-2 ng-star-inserted"
+                                        appAccessControl moduleType="product_Update">
+                                            <div class="row ">
+                                <button  pButton pRipple icon="pi pi-pencil"
+                                class="  p-button-warning" [routerLink]="goTo(product.id)"
+                                title="{{'Shared.edit' | translate}}">
+                            </button>
+                            <span class="mx-2">
+                                {{'Shared.edit' | translate}}                            </span>                
+                        </div>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td [attr.colspan]="7" class="noRecordsMsg" style="text-align: center !important;">
+                            {{'Shared.noData' | translate}} </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+
+
